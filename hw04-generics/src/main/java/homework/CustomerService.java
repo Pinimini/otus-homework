@@ -7,7 +7,8 @@ import java.util.TreeMap;
 
 public class CustomerService {
 
-    private final NavigableMap<Customer, String> customers = new TreeMap<>((c1, c2) -> (int) (c1.getScores() - c2.getScores()));
+    private final NavigableMap<Customer, String> customers
+            = new TreeMap<>((c1, c2) -> (int) (c1.getScores() - c2.getScores()));
 
     public Map.Entry<Customer, String> getSmallest() {
         return copyEntry(customers.firstEntry());
