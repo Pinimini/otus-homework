@@ -11,6 +11,7 @@ public class Main {
 
         loggingInterface.calculation(5);
         loggingInterface.calculation(5, 10);
+        loggingInterface.calculation(5, "String");
         loggingInterface.calculation();
     }
 }
