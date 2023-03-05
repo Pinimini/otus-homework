@@ -8,6 +8,7 @@ import static com.google.common.base.Objects.equal;
 public class HelloOtus {
     public static void main(String... args) {
         String sourceString = "Hello Otus";
+        System.out.println("Hello otus");
         System.out.println(equal(sourceString, "Hello otus"));
     }
 }
