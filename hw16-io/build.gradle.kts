@@ -1,6 +1,7 @@
 dependencies {
-    implementation ("com.fasterxml.jackson.core:jackson-databind")
-    implementation ("org.glassfish:jakarta.json")
+    implementation ("com.google.guava:guava")
+    implementation ("com.google.code.gson:gson")
+    implementation("org.glassfish:jakarta.json")
 
     testImplementation ("org.junit.jupiter:junit-jupiter-api")
     testImplementation ("org.junit.jupiter:junit-jupiter-engine")

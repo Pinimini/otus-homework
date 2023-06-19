@@ -14,9 +14,6 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 class ProcessorTest {
 
-    //Надо реализовать методы классов и убедиться, что тест проходит
-    //сам тест менять нельзя
-
     @Test
     @DisplayName("Из файла читается json, обрабатывается, результат сериализуется в строку")
     void processingTest(@TempDir Path tempDir) throws IOException {

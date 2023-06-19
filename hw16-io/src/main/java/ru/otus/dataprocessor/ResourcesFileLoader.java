@@ -1,11 +1,10 @@
 package ru.otus.dataprocessor;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import jakarta.json.Json;
 import jakarta.json.JsonReader;
 import ru.otus.model.Measurement;
 
-import java.io.IOException;
 import java.util.List;
 
 public class ResourcesFileLoader implements Loader {
@@ -16,13 +15,14 @@ public class ResourcesFileLoader implements Loader {
     }
 
     @Override
-    public List<Measurement> load() throws IOException {
-        //читает файл, парсит и возвращает результат
-        ObjectMapper objectMapper = new ObjectMapper();
+    public List<Measurement> load() {
+
+        List<Measurement> measurements;
         try (JsonReader reader = Json.createReader(
-                ResourcesFileLoader.class.getClassLoader().getResourceAsStream("inputData.json"))) {
-            //List measurement = objectMapper.readValue(reader.toString(), List<>.class);
+                ResourcesFileLoader.class.getClassLoader().getResourceAsStream(fileName))) {
+            Gson gson = new Gson();
+            measurements = List.of(gson.fromJson(reader.read().toString(), Measurement[].class));
         }
-        return null;
+        return measurements;
     }
 }

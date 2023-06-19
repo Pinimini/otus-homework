@@ -36,6 +36,7 @@ allprojects {
 
     val guava: String by project
     val glassfishJson: String by project
+    val gson: String by project
 
     apply(plugin = "io.spring.dependency-management")
     dependencyManagement {
@@ -47,6 +48,7 @@ allprojects {
             }
             dependency("com.google.guava:guava:$guava")
             dependency("org.glassfish:jakarta.json:$glassfishJson")
+            dependency("com.google.code.gson:gson:$gson")
         }
     }
 
